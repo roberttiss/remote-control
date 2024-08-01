@@ -10,5 +10,6 @@ Houve algumas dificuldades na separação de abstração de um eletrônico de um
 
 Foram utilizado os eletrônicos: Ar Condicionado e Lâmpada Inteligente para desenolvimento do controle remoto.
 
-![image](https://github.com/user-attachments/assets/79dcb479-1398-4adc-9bfc-8d9f99f7b297)
+![image](https://github.com/user-attachments/assets/ca12e3a4-2a91-4f6f-a784-a6f53663ba97)
+
 
