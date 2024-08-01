@@ -1,23 +1,16 @@
 package model;
 
-public class AirConditioning {
+public class AirConditioning extends Eletronic{
 
-    private final String brand;
-    private final int power;
+    private int power;
     private int temperature;
+    private boolean isOn;
 
     public AirConditioning(String brand, int power) {
-        this.brand = brand;
+        super(brand);
         this.temperature = 24;
         this.power = power;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public int getPower() {
-        return power;
+        this.isOn = false;
     }
 
     public int getTemperature() {
@@ -26,5 +19,23 @@ public class AirConditioning {
 
     public void setTemperature(int temperature) {
         this.temperature = temperature;
+    }
+
+    public void setOn(boolean onOrOff) {
+        isOn = onOrOff;
+    }
+
+    public boolean isOn() {
+        return isOn;
+    }
+
+    @Override
+    public String toString() {
+        return "AirConditioning{" +
+                "power=" + power +
+                ", temperature=" + temperature +
+                ", isOn=" + isOn +
+                ", brand='" + brand + '\'' +
+                '}';
     }
 }
