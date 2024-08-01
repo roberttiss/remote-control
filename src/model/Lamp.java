@@ -8,7 +8,6 @@ public class Lamp extends Eletronic implements Device {
     private String color;
     private int intensity;
     public List<String> colors;
-    private boolean isOn;
 
     public Lamp(String brand) {
         super(brand);

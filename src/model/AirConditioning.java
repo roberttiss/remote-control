@@ -4,7 +4,6 @@ public class AirConditioning extends Eletronic implements Device{
 
     private int power;
     private int temperature;
-    private boolean isOn;
 
     public AirConditioning(String brand, int power) {
         super(brand);
