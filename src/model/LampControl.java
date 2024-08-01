@@ -32,7 +32,7 @@ public class LampControl extends RemoteControl{
     }
 
     public void changeIntensity(int intensity){
-        if (lamp.checkIsOn() && verifyValue(intensity)){
+        if (lamp.checkIsOn() && lamp.checkValueIntensity(intensity)){
             lamp.setIntensity(intensity);
             System.out.println("Intensity of lamp defined as " + intensity + ".");
         } else {
@@ -40,8 +40,5 @@ public class LampControl extends RemoteControl{
         }
     }
 
-    public boolean verifyValue(int value){
-        return value >= 0 && value <= 100;
-    }
 
 }

@@ -34,6 +34,10 @@ public class Lamp extends Eletronic implements Device {
         this.color = color;
     }
 
+    public boolean checkValueIntensity(int value){
+        return value >= 0 && value <= 100;
+    }
+
     @Override
     public String toString() {
         return "Lamp{" +
