@@ -8,17 +8,14 @@ public abstract class RemoteControl {
         this.device = device;
     }
 
-    public void isOn(){
+    public void turnOn(){
         device.on();
         System.out.println(device.getClass().getSimpleName() + " is now on");
     }
 
-    public void isOff(){
+    public void turnOff(){
         device.off();
         System.out.println(device.getClass().getSimpleName() + " is now off");
     }
 
-    public boolean checkDeviceOn(){
-        return device.checkIsOn();
-    }
 }

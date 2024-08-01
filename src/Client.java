@@ -20,7 +20,7 @@ public class Client {
 
         System.out.println(lampada);
 
-        controleLampada.isOn();
+        controleLampada.turnOn();
 
         controleLampada.changeColor();
 
@@ -58,14 +58,14 @@ public class Client {
 
         System.out.println(arCondicionado);
 
-        arCondicionadoControle.isOn();
+        arCondicionadoControle.turnOn();
 
         arCondicionadoControle.increase_temperature();
 
         System.out.println(arCondicionado);
 
-        arCondicionadoControle.isOff();
+        arCondicionadoControle.turnOff();
 
-        controleLampada.isOff();
+        controleLampada.turnOff();
     }
 }
