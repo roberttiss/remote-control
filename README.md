@@ -9,3 +9,6 @@ O problema solucionado utilizando Bridge se dá ao fato de que vários eletrôni
 Houve algumas dificuldades na separação de abstração de um eletrônico de um controle remoto.
 
 Foram utilizado os eletrônicos: Ar Condicionado e Lâmpada Inteligente para desenolvimento do controle remoto.
+
+![image](https://github.com/user-attachments/assets/79dcb479-1398-4adc-9bfc-8d9f99f7b297)
+
