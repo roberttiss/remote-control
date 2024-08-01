@@ -1,6 +1,6 @@
 package model;
 
-public class AirConditioning extends Eletronic{
+public class AirConditioning extends Eletronic implements Device{
 
     private int power;
     private int temperature;
@@ -21,14 +21,6 @@ public class AirConditioning extends Eletronic{
         this.temperature = temperature;
     }
 
-    public void setOn(boolean onOrOff) {
-        isOn = onOrOff;
-    }
-
-    public boolean isOn() {
-        return isOn;
-    }
-
     @Override
     public String toString() {
         return "AirConditioning{" +
@@ -37,5 +29,20 @@ public class AirConditioning extends Eletronic{
                 ", isOn=" + isOn +
                 ", brand='" + brand + '\'' +
                 '}';
+    }
+
+    @Override
+    public void on() {
+        this.isOn = true;
+    }
+
+    @Override
+    public void off() {
+        this.isOn = false;
+    }
+
+    @Override
+    public boolean checkIsOn() {
+        return this.isOn;
     }
 }

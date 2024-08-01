@@ -1,15 +1,16 @@
 package model;
 
-public class AirConditioningControl implements RemoteControl {
+public class AirConditioningControl extends RemoteControl{
 
     private final AirConditioning airConditioning;
 
     public AirConditioningControl(AirConditioning airConditioning) {
+        super(airConditioning);
         this.airConditioning = airConditioning;
     }
 
     public void increase_temperature(){
-        if (checkEletronicOn()){
+        if (airConditioning.checkIsOn()){
             int temperature = airConditioning.getTemperature();
             airConditioning.setTemperature(temperature + 1);
             System.out.println("Temperature increased to " + airConditioning.getTemperature() + "°C.");
@@ -19,7 +20,7 @@ public class AirConditioningControl implements RemoteControl {
     }
 
     public void decrease_temperature(){
-        if (checkEletronicOn()){
+        if (airConditioning.checkIsOn()){
             int temperature = airConditioning.getTemperature();
             airConditioning.setTemperature(temperature - 1);
             System.out.println("Temperature decreased to " + airConditioning.getTemperature() + "°C.");
@@ -28,20 +29,4 @@ public class AirConditioningControl implements RemoteControl {
         }
     }
 
-    @Override
-    public void on() {
-        airConditioning.setOn(true);
-        System.out.println("Air Conditioning is now on");
-    }
-
-    @Override
-    public void off() {
-        airConditioning.setOn(false);
-        System.out.println("Air Conditioning is now off");
-    }
-
-    @Override
-    public boolean checkEletronicOn() {
-        return airConditioning.isOn();
-    }
 }

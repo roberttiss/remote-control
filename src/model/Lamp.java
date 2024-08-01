@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lamp extends Eletronic {
+public class Lamp extends Eletronic implements Device {
 
     private String color;
     private int intensity;
@@ -35,14 +35,6 @@ public class Lamp extends Eletronic {
         this.color = color;
     }
 
-    public void setOn(boolean onOrOff) {
-        isOn = onOrOff;
-    }
-
-    public boolean isOn() {
-        return isOn;
-    }
-
     @Override
     public String toString() {
         return "Lamp{" +
@@ -52,4 +44,20 @@ public class Lamp extends Eletronic {
                 ", brand='" + brand + '\'' +
                 '}';
     }
+
+    @Override
+    public void on() {
+        this.isOn = true;
+    }
+
+    @Override
+    public void off() {
+        this.isOn = false;
+    }
+
+    @Override
+    public boolean checkIsOn() {
+        return this.isOn;
+    }
+
 }

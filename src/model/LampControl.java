@@ -2,16 +2,17 @@ package model;
 
 import java.util.Optional;
 
-public class LampControl implements RemoteControl{
+public class LampControl extends RemoteControl{
 
     private final Lamp lamp;
 
     public LampControl(Lamp lamp) {
+        super(lamp);
         this.lamp = lamp;
     }
 
     public void changeColor(){
-        if (checkEletronicOn()){
+        if (lamp.checkIsOn()){
             String currentColor = lamp.getColor();
             Optional<String> nextColor = lamp.colors.stream()
                 .dropWhile(color -> !color.equals(currentColor))
@@ -31,7 +32,7 @@ public class LampControl implements RemoteControl{
     }
 
     public void changeIntensity(int intensity){
-        if (checkEletronicOn() && verifyValue(intensity)){
+        if (lamp.checkIsOn() && verifyValue(intensity)){
             lamp.setIntensity(intensity);
             System.out.println("Intensity of lamp defined as " + intensity + ".");
         } else {
@@ -43,20 +44,4 @@ public class LampControl implements RemoteControl{
         return value >= 0 && value <= 100;
     }
 
-    @Override
-    public void on() {
-        System.out.println("Lamp is now on");
-        lamp.setOn(true);
-    }
-
-    @Override
-    public void off() {
-        System.out.println("Lamp is now off");
-        lamp.setOn(false);
-    }
-
-    @Override
-    public boolean checkEletronicOn() {
-        return lamp.isOn();
-    }
 }
