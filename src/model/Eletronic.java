@@ -1,7 +1,11 @@
 package model;
 
-public interface Eletronic {
+public abstract class Eletronic {
 
-    void on();
-    void off();
+    String brand;
+
+    public Eletronic(String brand) {
+        this.brand = brand;
+    }
+
 }
